@@ -1,13 +1,17 @@
-For install vendor
+Steps to install:
 
-cp .env.example .env
+1) cp .env.example .env
 
-docker-compose up -d --build
+2) configure `OPEN_WEATHER_TOKEN` param
 
-docker exec php composer install
+3) run commands:
 
-docker exec php artisan key:generate
+`docker-compose up -d --build`
 
-docker exec php artisan migrate
+`docker exec php composer install`
 
-App is listening on :8080 port
+`docker exec php artisan key:generate`
+
+`docker exec php artisan migrate`
+
+**App is listening on :8080 port**
