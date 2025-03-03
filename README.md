@@ -15,3 +15,6 @@ Steps to install:
 `docker exec php artisan migrate`
 
 **App is listening on :8080 port**
+To get current weather in Moscow example:
+
+[localhost:8080/api/weather/info?lat=55.751244&lon=37.618423]()
