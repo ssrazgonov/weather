@@ -14,10 +14,12 @@ class WeatherController extends Controller
     {
         try {
             $weatherInfo = $weatherService->getWeatherInfo($weatherRequest->validated());
-
             return WeatherResource::make($weatherInfo);
         } catch (Throwable $exception) {
-
+            return response()->json([
+                'success' => false,
+                'error' => $exception->getMessage()
+            ]);
         }
     }
 }

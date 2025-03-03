@@ -17,11 +17,7 @@ class WeatherService
 
     public function getWeatherInfo(array $params): array
     {
-        if (empty(['city'])) {
-            throw new InvalidArgumentException('City not provided');
-        }
-
-        $cacheKey = static::CACHE_KEY_PREFIX . $params['city'];
+        $cacheKey = static::CACHE_KEY_PREFIX . $params['lat'] . $params['lon'];
 
         return Cache::remember($cacheKey, $this->cacheTtl, function() use ($params) {
             return $this->provider->getWeatherInfo($params);

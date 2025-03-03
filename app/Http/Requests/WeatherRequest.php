@@ -10,7 +10,8 @@ class WeatherRequest extends FormRequest
     public function rules()
     {
         return [
-            'city' => 'required|string',
+            'lat' => 'required|numeric',
+            'lon' => 'required|numeric',
         ];
     }
 }

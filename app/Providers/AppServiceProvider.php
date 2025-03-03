@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use App\Contracts\WeatherProvider;
-use app\DataProviders\Weather\OpenWeatherProvider;
+use App\DataProviders\Weather\OpenWeatherProvider;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
